@@ -1,7 +1,16 @@
+'use client';
+
 import { motion } from 'motion/react';
+import { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Download, ChevronDown, Sparkles } from 'lucide-react';
 
 export function HeroSection() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const socialLinks = [
     { icon: Github, href: '#', label: 'GitHub' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
@@ -16,7 +25,7 @@ export function HeroSection() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
       {/* Floating particles */}
       <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
+        {mounted && [...Array(20)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-primary rounded-full"
