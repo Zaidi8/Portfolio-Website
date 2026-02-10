@@ -14,8 +14,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Johnson | Frontend / Full-Stack Engineer",
-  description: "Portfolio of Alex Johnson - Frontend / Full-Stack Engineer specializing in React, Next.js, and AI integrations.",
+  title: "Zaid Zaheer — Frontend Engineer",
+  description:
+    "Portfolio of Zaid Zaheer — Frontend Engineer specializing in React, Next.js, TypeScript, and AI integrations.",
+  openGraph: {
+    title: "Zaid Zaheer — Frontend Engineer",
+    description:
+      "Frontend Engineer specializing in React, Next.js, TypeScript, and AI integrations.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zaid Zaheer — Frontend Engineer",
+    description:
+      "Frontend Engineer specializing in React, Next.js, TypeScript, and AI integrations.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -24,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" style={{ scrollBehavior: "smooth" }}>
+    <html lang="en" className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
