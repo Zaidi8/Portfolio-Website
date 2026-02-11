@@ -1,6 +1,6 @@
 'use client';
 
-import { Code, Briefcase, Lightbulb } from 'lucide-react';
+import { Code, Briefcase, Lightbulb, Shield } from 'lucide-react';
 import { siteConfig } from '@/data/portfolio';
 import { FadeIn } from '@/components/fade-in';
 
@@ -9,6 +9,11 @@ const highlights = [
     icon: Code,
     label: 'Frontend & Full-Stack',
     detail: 'React, Next.js, React Native',
+  },
+  {
+    icon: Shield,
+    label: 'Secure Authentication',
+    detail: 'Brevo & Firebase OTP systems',
   },
   {
     icon: Briefcase,

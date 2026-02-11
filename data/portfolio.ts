@@ -11,6 +11,7 @@ import {
   Github,
   Linkedin,
   Mail,
+  Smartphone,
 } from 'lucide-react';
 
 // ── Types ────────────────────────────────────────────────────────────────────
@@ -101,6 +102,13 @@ export const technicalSkills: TechnicalSkill[] = [
     description:
       'Building scalable frontend and full-stack applications using React and Next.js (SSR, SSG, App Router).',
     experience: '1+ years',
+  },
+  {
+    name: 'React Native Development',
+    icon: Smartphone,
+    description:
+      'Building cross-platform mobile applications with smooth user flows and native-like performance.',
+    experience: '1+ year',
   },
   {
     name: 'Performance Optimization',
