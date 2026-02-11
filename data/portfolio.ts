@@ -197,7 +197,7 @@ export const projects: Project[] = [
     liveUrl: 'https://officesolver.com/',
   },
   {
-    title: 'BlueSoft Website (Next.js Migration)',
+    title: 'BlueSoft Website',
     summary: 'Company website migration from React to Next.js',
     description:
     'Migrated the legacy React website to Next.js with a new theme while maintaining design consistency. Integrated Ghost CMS to allow non-technical content management.',
@@ -212,6 +212,8 @@ export const projects: Project[] = [
       'Built mobile applications using React Native, including a wholesaler product-sharing app and a donation platform focused on usability and smooth user flows.',
     tech: ['React Native'],
     impact: 'Improved customer engagement and accessibility',
+    githubUrl: 'https://github.com/Zaidi8/DonationApplication',
+    
   },
 ];
 

@@ -14,6 +14,12 @@ function ProjectCard({ project, isActive }: { project: Project; isActive: boolea
   const href = project.liveUrl || project.githubUrl;
 
   return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block h-full"
+    >
     <div
       className={cn(
         'bg-card border rounded-2xl p-8 transition-all duration-500 h-full',
@@ -30,28 +36,16 @@ function ProjectCard({ project, isActive }: { project: Project; isActive: boolea
 
         <div className="flex gap-2 shrink-0 ml-4">
           {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20 hover:bg-primary/20 hover:scale-110 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-              aria-label={`View ${project.title} on GitHub`}
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div
+              className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20 hover:bg-primary/20 hover:scale-110 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
               <Github className="w-4 h-4 text-primary" />
-            </a>
+            </div>
           )}
           {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20 hover:bg-primary/20 hover:scale-110 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-              aria-label={`View ${project.title} live`}
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div              
+              className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20 hover:bg-primary/20 hover:scale-110 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
               <ExternalLink className="w-4 h-4 text-primary" />
-            </a>
+            </div>
           )}
         </div>
       </div>
@@ -75,21 +69,10 @@ function ProjectCard({ project, isActive }: { project: Project; isActive: boolea
         <div className="flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-primary shrink-0" />
           <p className="text-xs text-primary">{project.impact}</p>
-        </div>
-        {href && (
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-            onClick={(e) => e.stopPropagation()}
-          >
-            View project
-            <ExternalLink className="w-3 h-3" />
-          </a>
-        )}
+        </div>      
       </div>
     </div>
+    </a>
   );
 }
 
