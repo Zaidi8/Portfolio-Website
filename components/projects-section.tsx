@@ -13,13 +13,7 @@ const DRAG_THRESHOLD = 50;
 function ProjectCard({ project, isActive }: { project: Project; isActive: boolean }) {
   const href = project.liveUrl || project.githubUrl;
 
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block h-full"
-    >
+  const card = (
     <div
       className={cn(
         'bg-card border rounded-2xl p-8 transition-all duration-500 h-full',
@@ -34,7 +28,12 @@ function ProjectCard({ project, isActive }: { project: Project; isActive: boolea
           <p className="text-muted-foreground italic text-sm">{project.summary}</p>
         </div>
 
-        <div className="flex gap-2 shrink-0 ml-4">
+        <div className="flex items-center gap-2 shrink-0 ml-4">
+          {project.inProgress && (
+            <span className="px-3 py-1 rounded-full text-xs bg-amber-500/10 text-amber-400 border border-amber-500/30 whitespace-nowrap">
+              In Development
+            </span>
+          )}
           {project.githubUrl && (
             <div
               className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20 hover:bg-primary/20 hover:scale-110 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
@@ -42,7 +41,7 @@ function ProjectCard({ project, isActive }: { project: Project; isActive: boolea
             </div>
           )}
           {project.liveUrl && (
-            <div              
+            <div
               className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20 hover:bg-primary/20 hover:scale-110 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
               <ExternalLink className="w-4 h-4 text-primary" />
             </div>
@@ -69,9 +68,24 @@ function ProjectCard({ project, isActive }: { project: Project; isActive: boolea
         <div className="flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-primary shrink-0" />
           <p className="text-xs text-primary">{project.impact}</p>
-        </div>      
+        </div>
       </div>
     </div>
+  );
+
+  // Projects without a live or repo link (e.g. in-development) render as a plain card.
+  if (!href) {
+    return <div className="block h-full">{card}</div>;
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block h-full"
+    >
+      {card}
     </a>
   );
 }

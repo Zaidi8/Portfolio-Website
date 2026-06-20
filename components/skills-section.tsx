@@ -74,10 +74,9 @@ function TechnicalSkillCard({ skill, index }: { skill: TechnicalSkill; index: nu
             </div>
             <h3 className="text-base">{skill.name}</h3>
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             {skill.description}
           </p>
-          <span className="text-xs text-primary font-medium">{skill.experience}</span>
         </div>
       </FadeIn>
     );
@@ -108,7 +107,6 @@ function TechnicalSkillCard({ skill, index }: { skill: TechnicalSkill; index: nu
               <skill.icon className="w-7 h-7 text-primary" />
             </div>
             <h3 className="text-base">{skill.name}</h3>
-            <span className="text-xs text-muted-foreground">{skill.experience}</span>
           </div>
 
           {/* Back face */}

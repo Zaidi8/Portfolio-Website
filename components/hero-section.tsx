@@ -37,11 +37,11 @@ export function HeroSection() {
             {/* Image */}
             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-background">
               <Image
-                src="/image.png"
+                src="/image.webp"
                 alt={`${siteConfig.name} — ${siteConfig.title}`}
                 fill
                 sizes="(max-width: 768px) 128px, 160px"
-                className="object-cover"
+                className="object-cover object-[center_25%]"
                 priority
               />
             </div>
@@ -52,7 +52,7 @@ export function HeroSection() {
         <motion.div {...fadeUp(0.1)} className="flex justify-center mb-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full backdrop-blur-sm hover:bg-primary/15 transition-colors duration-300">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm text-primary">Available for opportunities</span>
+            <span className="text-sm text-primary">Open to remote · based in Pakistan (UTC+5)</span>
           </div>
         </motion.div>
 
@@ -98,7 +98,8 @@ export function HeroSection() {
             Get in Touch
           </motion.a>
           <motion.a
-            href="#"
+            href="/Zaid-Zaheer-Resume.pdf"
+            download
             whileHover={reducedMotion ? {} : { scale: 1.03, y: -2 }}
             whileTap={reducedMotion ? {} : { scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}

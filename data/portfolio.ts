@@ -1,10 +1,13 @@
 import type { LucideIcon } from 'lucide-react';
 import {
   Code,
+  Braces,
+  LayoutGrid,
   Zap,
+  LineChart,
   Brain,
-  Rocket,
   Sparkles,
+  Server,
   Users,
   MessageSquare,
   Target,
@@ -31,7 +34,6 @@ export interface TechnicalSkill {
   name: string;
   icon: LucideIcon;
   description: string;
-  experience: string;
 }
 
 export interface SoftSkill {
@@ -49,12 +51,12 @@ export interface Project {
   impact: string;
   githubUrl?: string;
   liveUrl?: string;
+  inProgress?: boolean;
 }
 
 export interface Experience {
   company: string;
   role: string;
-  period: string;
   description: string;
   responsibilities: string[];
 }
@@ -64,14 +66,14 @@ export interface Experience {
 export const siteConfig = {
   name: 'Zaid Zaheer',
   navLogo: 'Zaid',
-  title: 'Frontend Engineer',
+  title: 'Lead Software Engineer (Frontend)',
   email: 'zaidzaheer410@gmail.com',
   tagline:
-    'Building high-performance web and mobile experiences with React-Native, React, Next.js, AI integrations, and secure authentication systems.',
+    'Building real-time, AI-powered web apps with React, Next.js, and TypeScript — owning delivery from architecture to production, with a growing backend skill set in Go.',
   aboutParagraphs: [
-    "I'm a Frontend Engineer with hands-on experience building production-grade web and mobile applications using React, React Native, and Next.js. I focus on performance, scalability, and delivering clean, user-centric interfaces.",
-    "I’ve led projects end to end — from architecture and development to deployment and post-launch improvements — working closely with clients and stakeholders to translate business requirements into reliable technical solutions.",
-    "Currently, I’m working on AI-powered products and real-time data platforms, integrating technologies such as MCP, RAG, Brevo email OTP, and Firebase phone authentication to build secure, intelligent, and scalable systems.",
+    "I'm a frontend-focused Software Engineer and the Lead Software Engineer (technical lead) at BlueSoft, building production web applications with React, Next.js, and TypeScript. I care about performance, scalability, and clean, user-centric interfaces.",
+    "I own projects end to end — from architecture and development to deployment and post-launch iteration — working closely with clients and stakeholders to turn business requirements into reliable software.",
+    "Lately I've focused on real-time, AI-powered products, and I'm growing a backend skill set in Go (Echo, PostgreSQL, WebSockets). I work with an AI-augmented toolchain — Claude Code, Playwright MCP for E2E testing, and Figma AI — to ship faster without cutting corners.",
   ],
 } as const;
 
@@ -100,43 +102,55 @@ export const technicalSkills: TechnicalSkill[] = [
     name: 'React & Next.js',
     icon: Code,
     description:
-      'Building scalable frontend and full-stack applications using React and Next.js (SSR, SSG, App Router).',
-    experience: '1+ years',
+      'Architecting scalable frontends and full-stack apps with React and Next.js — App Router, SSR/SSG, and server components.',
   },
   {
-    name: 'React Native Development',
-    icon: Smartphone,
+    name: 'TypeScript & JavaScript',
+    icon: Braces,
     description:
-      'Building cross-platform mobile applications with smooth user flows and native-like performance.',
-    experience: '1+ year',
+      'Type-safe, maintainable code across the stack — my primary production languages.',
   },
   {
-    name: 'Performance Optimization',
+    name: 'UI Engineering & Design Systems',
+    icon: LayoutGrid,
+    description:
+      'Responsive, mobile-first interfaces with TailwindCSS, shadcn/ui, and accessible component patterns.',
+  },
+  {
+    name: 'Web Performance Optimization',
     icon: Zap,
     description:
-      'Caching, prefetching, optimized data fetching, and smooth UI interactions for high-performance apps.',
-    experience: '1+ years',
+      'Caching, prefetching, and optimized data fetching for fast, smooth UIs — up to ~40–60% faster load times on Tradevo.',
   },
   {
-    name: 'AI Integrations',
+    name: 'Data Visualization & Real-Time Data',
+    icon: LineChart,
+    description:
+      'Interactive charts and live dashboards with ECharts and TradingView Lightweight Charts over real-time data.',
+  },
+  {
+    name: 'AI Integration',
     icon: Brain,
     description:
-      'Integrating MCP-driven AI workflows and Retrieval-Augmented Generation (RAG) into web applications.',
-    experience: '1+ year',
+      'Building AI-powered features with large language models and real-time voice/conversational AI, plus prompt engineering.',
   },
   {
-    name: 'Authentication Systems',
-    icon: Rocket,
-    description:
-      'Secure OTP-based authentication using Brevo (email) and Firebase (phone verification).',
-    experience: '1+ year',
-  },
-  {
-    name: 'Real-Time Data Visualization',
+    name: 'AI-Augmented Workflow',
     icon: Sparkles,
     description:
-      'Interactive charts and dashboards using TradingView Lightweight Charts and real-time data.',
-    experience: '1+ years',
+      'Shipping faster with Claude Code, Playwright MCP for E2E test automation, and Figma AI.',
+  },
+  {
+    name: 'Go & Backend (growing)',
+    icon: Server,
+    description:
+      'Backend services in Go (Echo, pgx, WebSockets) with PostgreSQL and Docker — a growing, hands-on skill set.',
+  },
+  {
+    name: 'React Native (personal / learning)',
+    icon: Smartphone,
+    description:
+      'Cross-platform mobile UIs and user flows — personal and learning projects, not production work.',
   },
 ];
 
@@ -144,11 +158,11 @@ export const technicalSkills: TechnicalSkill[] = [
 
 export const softSkills: SoftSkill[] = [
   {
-    name: 'Technical Leadership & Ownership',
+    name: 'Technical Leadership & Architecture',
     icon: Users,
     description:
-      'Owning projects end to end, from planning and architecture to delivery and maintenance.',
-    impact: 'Led multiple production projects',
+      'Leading technical direction end to end — architecture, code review, and delivery — and owning projects from planning to maintenance.',
+    impact: 'Lead Software Engineer at BlueSoft',
   },
   {
     name: 'Stakeholder Communication',
@@ -170,50 +184,58 @@ export const softSkills: SoftSkill[] = [
 
 export const projects: Project[] = [
   {
-    title: 'Aiva',
-    summary: 'AI-powered virtual receptionist (Final Year Project – In Progress)',
-    description:
-      'Leading the development of an AI-powered virtual receptionist that automates appointment booking and handles user queries 24/7. Built using Next.js as a full-stack framework with MCP-based AI-driven CRUD operations and planned RAG integration for context-aware responses.',
-    tech: ['Next.js', 'React', 'MCP', 'RAG', 'AI Integrations'],
-    impact: 'Demonstrates production-grade AI automation and full-stack ownership',
-    liveUrl: 'https://aiva-fyp.vercel.app/',
-  },
-  {
     title: 'Tradevo',
-    summary: 'AI-powered trading platform with real-time market data',
+    summary: 'AI-powered crypto trading-journal platform — public beta',
     description:
-      'Developed a high-performance trading platform with real-time charts and indicators using TradingView Lightweight Charts. Implemented secure authentication with Brevo email OTP and Firebase phone OTP, along with caching and hover-based prefetching for near-instant UI interactions.',
-    tech: ['Next.js', 'React', 'TradingView', 'Brevo', 'Firebase'],
-    impact: 'Smooth, secure, and high-performance fintech user experience',
-    liveUrl: 'https://stage.tradevo.ai/',
+      'I lead the frontend (architecture and build) for Tradevo, an AI-powered, real-time crypto trading-journal platform in public beta with live users. I built the Analytics, Markets, and Journal surfaces, onboarding, and auth/profile/settings — including a unified, cookie-persisted filtering system shared across Analytics and Journal. The Journal handles open/closed positions with list, grid, and detailed views; Analytics has live per-coin charts, a watchlist, KPI cards, and ECharts visualizations. Real-time Binance data flows through our own backend, and caching/prefetching cut load times by ~40–60%. I also rebuilt the marketing site pixel-perfect in Next.js.',
+    tech: ['React', 'Next.js', 'TypeScript', 'TailwindCSS', 'ECharts', 'TradingView', 'Firebase OTP', 'shadcn/ui'],
+    impact: 'Public beta with live users · ~40–60% faster load times',
+    liveUrl: 'https://tradevo.ai/',
   },
   {
     title: 'OfficeSolver',
-    summary: 'All-in-one business management platform',
+    summary: 'All-in-one business-management platform',
     description:
-    'Developed and deployed a scalable business management solution covering projects, clients, payroll, and workflows. Delivered continuous updates post-deployment based on client requirements.',
-    tech: ['Next.js', 'React', 'Web Apps'],
-    impact: 'Improved operational efficiency for multi-user teams',
+      'A business-management platform covering projects, clients, payroll, and workflows. Built and maintained in production with continuous post-launch updates driven by client needs.',
+    tech: ['React', 'Next.js', 'TypeScript'],
+    impact: 'Production platform for multi-user teams',
     liveUrl: 'https://officesolver.com/',
   },
   {
     title: 'BlueSoft Website',
-    summary: 'Company website migration from React to Next.js',
+    summary: 'Company site — legacy React → Next.js migration',
     description:
-    'Migrated the legacy React website to Next.js with a new theme while maintaining design consistency. Integrated Ghost CMS to allow non-technical content management.',
-    tech: ['Next.js', 'React', 'Ghost CMS'],
+      "Migrated BlueSoft's site from legacy React to Next.js with Ghost CMS as the content backend. I own and continuously evolve it — redesigns, restructures, new pages, and ongoing performance/SEO work.",
+    tech: ['React', 'Next.js', 'Ghost CMS'],
     impact: 'Better performance, SEO, and content workflow',
-    liveUrl:'https://bluesoft.ai/'
+    liveUrl: 'https://bluesoft.ai/',
+  },
+  {
+    title: 'Aiva',
+    summary: 'AI voice receptionist — final-year project',
+    description:
+      'An AI-powered voice receptionist that automates appointment booking and answers queries 24/7. Built with Next.js and LiveKit Agents for real-time voice, WhisperFlow for speech-to-text, ElevenLabs for text-to-speech, and Llama 70B via Groq for the LLM. Currently in development.',
+    tech: ['Next.js', 'LiveKit Agents', 'WhisperFlow (STT)', 'ElevenLabs (TTS)', 'Llama 70B / Groq'],
+    impact: 'Real-time, AI-driven voice automation',
+    inProgress: true,
+  },
+  {
+    title: 'Webhook Relay',
+    summary: 'Backend webhook relay service in Go',
+    description:
+      'A Go backend service that receives, verifies (HMAC-SHA256), stores, and forwards webhooks with retries and exponential backoff, plus a real-time WebSocket relay. Includes an async delivery worker with dead-lettering and manual re-queue, graceful shutdown, and a clean layered architecture with tests. A personal project to grow my backend range.',
+    tech: ['Go', 'Echo', 'PostgreSQL', 'WebSockets', 'Docker'],
+    impact: 'Personal Go project — backend depth',
+    githubUrl: 'https://github.com/Zaidi8/webhook-relay',
   },
   {
     title: 'React Native Mobile Apps',
-    summary: 'Deals App & Donation App',
+    summary: 'Donation & Deals apps — personal / learning',
     description:
-      'Built mobile applications using React Native, including a wholesaler product-sharing app and a donation platform focused on usability and smooth user flows.',
-    tech: ['React Native'],
-    impact: 'Improved customer engagement and accessibility',
+      'Personal mobile projects built with React Native — a donation platform and a wholesaler product-sharing/deals app — focused on mobile UI/UX and smooth user flows. Personal and learning work, not production.',
+    tech: ['React Native', 'Expo'],
+    impact: 'Personal / learning — mobile UI & UX',
     githubUrl: 'https://github.com/Zaidi8/DonationApplication',
-    
   },
 ];
 
@@ -221,16 +243,15 @@ export const projects: Project[] = [
 
 export const experiences: Experience[] = [
   {
-    company: 'Project-Based & Client Work',
-    role: 'Frontend / Software Engineer',
-    period: '2022 - Present',
+    company: 'BlueSoft',
+    role: 'Lead Software Engineer (Frontend)',
     description:
-      'Delivering production-ready web and mobile applications with a focus on performance, scalability, AI integration, and secure authentication.',
+      'Leading frontend architecture and delivery for production web apps — owning projects end to end from architecture through deployment and post-launch iteration, with a growing backend skill set in Go.',
     responsibilities: [
-      'Developed and maintained applications using React, React Native, and Next.js',
-      'Led end-to-end development including architecture, deployment, and post-launch updates',
-      'Implemented secure OTP authentication using Brevo and Firebase',
-      'Collaborated with stakeholders to deliver business-focused solutions',
+      'Lead the frontend architecture and build for Tradevo, an AI-powered real-time trading-journal platform in public beta',
+      'Own end-to-end delivery across React, Next.js, and TypeScript — architecture, development, deployment, and post-launch updates',
+      'Migrated the BlueSoft site to Next.js with Ghost CMS and continuously evolve it for performance and SEO',
+      'Work with an AI-augmented toolchain (Claude Code, Playwright MCP for E2E testing, Figma AI)',
     ],
   },
 ];

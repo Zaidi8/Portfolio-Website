@@ -1,6 +1,6 @@
 'use client';
 
-import { Briefcase, Calendar, CheckCircle } from 'lucide-react';
+import { Briefcase, CheckCircle } from 'lucide-react';
 import { experiences, type Experience } from '@/data/portfolio';
 import { FadeIn } from '@/components/fade-in';
 
@@ -8,11 +8,6 @@ function ExperienceCard({ experience, index }: { experience: Experience; index: 
   return (
     <FadeIn delay={index * 0.15} direction="up">
       <article className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-lg hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group">
-        <div className="flex items-center gap-2 text-sm text-primary mb-4">
-          <Calendar className="w-4 h-4" />
-          <time>{experience.period}</time>
-        </div>
-
         <h3 className="text-2xl mb-2 group-hover:text-primary transition-colors duration-300">
           {experience.role}
         </h3>

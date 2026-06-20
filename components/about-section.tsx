@@ -1,29 +1,29 @@
 'use client';
 
-import { Code, Briefcase, Lightbulb, Shield } from 'lucide-react';
+import { Code, Briefcase, Sparkles, Server } from 'lucide-react';
 import { siteConfig } from '@/data/portfolio';
 import { FadeIn } from '@/components/fade-in';
 
 const highlights = [
   {
     icon: Code,
-    label: 'Frontend & Full-Stack',
-    detail: 'React, Next.js, React Native',
-  },
-  {
-    icon: Shield,
-    label: 'Secure Authentication',
-    detail: 'Brevo & Firebase OTP systems',
+    label: 'Frontend Core',
+    detail: 'React, Next.js, TypeScript',
   },
   {
     icon: Briefcase,
     label: 'End-to-End Delivery',
-    detail: 'Architecture to deployment',
+    detail: 'Architecture to production',
   },
   {
-    icon: Lightbulb,
-    label: 'AI & Real-Time Systems',
-    detail: 'MCP, RAG, live data platforms',
+    icon: Server,
+    label: 'Backend (growing)',
+    detail: 'Go, PostgreSQL, Docker',
+  },
+  {
+    icon: Sparkles,
+    label: 'AI-Augmented Workflow',
+    detail: 'Claude Code, Playwright MCP, Figma AI',
   },
 ];
 
